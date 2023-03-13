@@ -9,6 +9,8 @@ function writePassword() {
   passwordText.value = password;
 
 }
+generateBtn.addEventListener("click", writePassword);
+
 var specialCharac = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "^", "_", "`", "{", "|", "}", "~", "]"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
@@ -92,17 +94,18 @@ function generatePassword() {
 
 
 // generate password
-emptyPassword ;
+var emptyPassword = [];
 for (var i = 0; i < charactersLength; i++) {
   var alluserSelection = userSelection[Math.floor(Math.random() * userSelection.length)];
-  emptyPassword.push(alluserSelection);
+  emptyPassword.push(alluserSelection); }
 
-  
+var password = emptyPassword.join("");
+console.log(password)
 
-    return variable
+    return password
   }
 
 
 
   // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  
